@@ -22,7 +22,7 @@ public class ActionField extends JPanel {
 	
 	public void runTheGame() throws Exception {
 		
-		tank.moveToQuadrant(1, 7);
+		tank.moveToQuadrant(1, 8);
 		tank.fire();
 		tank.move();
 		tank.turn(Direction.LEFT);
