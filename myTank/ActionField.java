@@ -17,28 +17,16 @@ public class ActionField extends JPanel {
 	final boolean COLORDED_MODE = true;
 	BattleField battleField = new BattleField();
 	Bullet bullet = new Bullet(-100, -100, Direction.UP);
-	
-	BT7 bt7 = new BT7(this, battleField, 320, 512, Direction.UP);
 	Tank tank = new Tank (this,battleField);
-	Tank tank1 = new Tank (this, battleField, 256, 512, Direction.UP);
+
 	
 	public void runTheGame() throws Exception {
 		
-//		tank.moveToQuadrant(1, 9);
-//		bt7.moveToQuadrant(9, 9);
-//		tank.moveToQuadrant(1,1);
-		bt7.moveRandom();
-//		bt7.turn(Direction.UP);
-		bt7.fire();
-		bt7.move();
-//		bt7.turn(Direction.LEFT);
-//		bt7.fire();
-//		bt7.move();
-//		tank1.turn(Direction.RIGHT);
+		tank.moveToQuadrant(1, 9);
 		tank.fire();
-//		tank.move();
-//		tank.turn(Direction.UP);
-//		tank.fire();
+		tank.move();
+		tank.turn(Direction.LEFT);
+		tank.fire();
 	}
 	
 	private boolean processInterception() {
@@ -202,10 +190,7 @@ public class ActionField extends JPanel {
 	
 		
     public ActionField () throws Exception {
-    	Tank defender = new Tank(this, battleField);
-    	Tank agressor = new Tank(this, battleField);
-    	BattleField but = new BattleField();
-	
+
 		JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
 		frame.setLocation(750, 150);
 		frame.setMinimumSize(new Dimension(battleField.getBF_WIDTH() + 16, battleField.getBF_HEIGHT() + 38));
