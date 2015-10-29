@@ -70,6 +70,20 @@ public class Library {
 		b.setTitle("Harry Potter");
 		b.setGenre(Genre.FANTASY);
 		addToLibrary(b);
+
+		b=new Books();
+		b.setAuthor("Arthur Conan Doyle");
+		b.setTitle("Story of Sherlock Holmes");
+		b.setGenre(Genre.DETECTIVE);
+		addToLibrary(b);
+
+		b=new Books();
+		b.setAuthor("Arthur Conan Doyle");
+		b.setTitle("The Great shadow and other Napaleonic Tales");
+		b.setGenre(Genre.DETECTIVE);
+		addToLibrary(b);
+
+
 					
 	}
 	
