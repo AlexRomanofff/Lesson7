@@ -29,12 +29,11 @@ public class ClassRoom {
     }
 
     public boolean isPresent(Student stud) {
-        for (Student student : students) {
             if (students.contains(stud)) {
-                System.out.printf("%s %s %s %s%n", "Student", student.getName(), student.getSecondName(), "is present");
+                System.out.printf("%s %s %s %s%n", "Student", stud.getName(), stud.getSecondName(), "is present");
                 return true;
             }
-        }
+
         System.out.printf("%s %s %s %s%n", "Student", stud.getName(), stud.getSecondName(), "is absent");
         return false;
     }
