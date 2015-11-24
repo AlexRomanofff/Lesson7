@@ -43,8 +43,8 @@ public class Demo {
         classRoom.leaveClass(student2);
         System.out.println(classRoom.getStudentCount());
         classRoom.printList();
-        classRoom.isPresent("Maria", "Ho");
-        classRoom.isPresent("Alex", "Romanov");
+        classRoom.isPresent(student);
+        classRoom.isPresent(student1);
     }
 
 }
