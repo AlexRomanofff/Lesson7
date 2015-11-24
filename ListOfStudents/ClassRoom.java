@@ -35,7 +35,7 @@ public class ClassRoom {
                 return true;
             }
         }
-        System.out.printf("%s %s %s %s%n", "Student", stud.getName(), stud.getSecondName(), "is abent");
+        System.out.printf("%s %s %s %s%n", "Student", stud.getName(), stud.getSecondName(), "is absent");
         return false;
     }
 
