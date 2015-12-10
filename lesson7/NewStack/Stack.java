@@ -7,7 +7,7 @@ import java.util.EmptyStackException;
 public class Stack {
 
 
-    private ArrayList<Object> arrayList = new ArrayList<Object>();
+    private ArrayList<Object> arrayList = new ArrayList<>();
     private int size;
 
     public Stack () {
@@ -37,8 +37,7 @@ public class Stack {
         if (size==0){
             throw new EmptyStackException();
         } else {
-        Object head = arrayList.get(size-1);
-        return head;
+            return  arrayList.get(size-1);
         }
     }
 }
