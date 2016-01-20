@@ -12,6 +12,7 @@ public abstract class Car<T extends Car> {
 
 
     public Car ( ) {
+        int price = 10000;
 
     }
 
@@ -46,5 +47,6 @@ public abstract class Car<T extends Car> {
     public void setPrice(double price) {
         this.price = price;
     }
+
 }
 

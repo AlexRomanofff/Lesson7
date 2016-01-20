@@ -7,7 +7,7 @@ public class Demo {
         Toyota toyota = new Toyota();
 
         CarStorage<Car> cars = new CarStorage<>();
-
+        CarStorage<Nissan> nissans = new CarStorage<>();
         nissan.setPrice(10000);
         toyota.setPrice(9000);
         cars.addCar(nissan);
