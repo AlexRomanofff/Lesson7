@@ -17,7 +17,7 @@ public class Frame2 {
 
         }
     }
-    public static void printClassMethodClass (Class clas) {
+    public static void printClassMethodClass (Class<?> clas) {
         Constructor[]constructors = clas.getConstructors();
         Method[]methods = clas.getMethods();
        for(Method m:methods) {
