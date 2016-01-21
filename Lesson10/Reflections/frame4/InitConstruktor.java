@@ -10,9 +10,8 @@ public class InitConstruktor <T>{
         T obj;
 
         Class[] classes = new Class[params.size()];
-        String [] nameClass =new String[params.size()];
 
-         for(int i=0; i< nameClass.length; i++) {
+         for(int i=0; i< classes.length; i++) {
 
              classes[i] = params.get(i).getClass();
              if (classes[i].getSimpleName().equals("Integer")) {
