@@ -14,8 +14,8 @@ public class DemoF3 {
       Frame3<TV> f3 = new Frame3();
         Map<String, Object> map = new HashMap<>();
         map.put("brand", "Panasonic");
-        map.put("height", 200);
-        map.put("weight", 100);
+//        map.put("height", 200);
+//        map.put("weight", 100);
         TV tv = f3.initClass(TV.class, map);
 
         System.out.println(tv.getWeight());

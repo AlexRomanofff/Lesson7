@@ -6,7 +6,7 @@ public class TV {
     private int weight;
     private int height;
     private String manufacturer;
-    private String price;
+    private double price;
 
     public TV () {
 
@@ -20,7 +20,8 @@ public class TV {
     public TV (String manufacturer) {
         this.manufacturer = manufacturer;
     }
-    public TV (int weight,  String manufacturer, int height, String price) {
+
+    public TV (int weight,  String manufacturer, int height, double price) {
         this.weight = weight;
         this.height = height;
         this.manufacturer = manufacturer;
@@ -39,7 +40,7 @@ public class TV {
         return manufacturer;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 }

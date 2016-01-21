@@ -3,7 +3,7 @@ package Lesson10.Reflections;
 
 public class TV {
     public int height;
-    private int weight;
+    public int weight;
     private String brand;
 
     public int getWeight() {
