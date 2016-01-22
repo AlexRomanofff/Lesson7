@@ -1,10 +1,9 @@
 package Lesson10.Containers;
 
+@RunService
+public class FirstService {
 
-public class FirstService implements Service {
 
-    @RunService
     public void washing () {
-
     }
 }

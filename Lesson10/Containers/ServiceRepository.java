@@ -4,7 +4,7 @@ package Lesson10.Containers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceRepository<T extends Service> {
+public class ServiceRepository<T extends FirstService> {
     private List<T> services;
 
     public ServiceRepository () {
