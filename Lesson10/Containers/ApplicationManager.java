@@ -8,8 +8,8 @@ public class ApplicationManager <T> {
 
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException{
         ApplicationManager am = new ApplicationManager();
-//        am.runService(FirstService.class);
-//        am.runService(Integer.class);
+        am.runService(FirstService.class);
+        am.runService(Integer.class);
         am.getService(FirstService.class);
         am.getService(Integer.class);
     }
