@@ -27,8 +27,9 @@ public class CopyFiles {
         String data = builder.toString();
 
         br.write(data);
+        br.flush();
         br.close();
-
+        reader.close();
         }
 
 

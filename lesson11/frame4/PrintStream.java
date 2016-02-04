@@ -8,10 +8,11 @@ public class PrintStream {
     public void printStreamData (InputStream stream) throws IOException{
 
         StringBuilder builder = new StringBuilder();
-        int i;
-        while ((i=stream.read())!=-1) {
-            builder.append((char)i);
+
+        while (stream.available()>0) {
+            builder.append((char)stream.read());
         }
         System.out.println(builder);
+        stream.close();
     }
 }
