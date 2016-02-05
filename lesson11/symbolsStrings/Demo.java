@@ -12,5 +12,7 @@ public class Demo {
         File file = new File("D:"+File.separator+"new_Directory"+File.separator+"newFile.txt");
         changeEncoding.changeEncoding(file,"UTF-8", "ASCII");
 
+
+
     }
 }
