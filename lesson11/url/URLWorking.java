@@ -1,7 +1,4 @@
 package lesson11.url;
-
-import lesson11.frame4.*;
-
 import java.io.*;
 import java.io.PrintStream;
 
