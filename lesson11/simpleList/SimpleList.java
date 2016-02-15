@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class SimpleList implements FileList, Iterable<Object>{
+public class SimpleList implements FileList,Serializable, Iterable<Object>{
     List<Object> list;
     File file;
 
@@ -19,7 +19,7 @@ public class SimpleList implements FileList, Iterable<Object>{
 
         list.add(obj);
         try {
-            FileOutputStream fos = new FileOutputStream(file,true);
+            FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             for (Object o : list) {
                 oos.writeObject(o);
@@ -63,7 +63,7 @@ public class SimpleList implements FileList, Iterable<Object>{
         List<Object> myList = new ArrayList<>();
 
         try {
-
+              if (file.exists()) {
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
             ObjectInputStream ois = new ObjectInputStream(bis);
             while (bis.available() > 0) {
@@ -72,6 +72,7 @@ public class SimpleList implements FileList, Iterable<Object>{
             }
 
             ois.close();
+              }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
