@@ -29,11 +29,17 @@ public class SimpleList implements FileList,Serializable, Iterable<Object>{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
 
+    @Override
+    public boolean contains(Object object) {
+        if (list.contains(object)) {
+            return true;
+        } return false;
     }
 
     public void remove(Object obj) {
-        if (list.contains(obj)) {
+        if (contains(obj)) {
             list.remove(obj);
             try {
                 FileOutputStream fos = new FileOutputStream(file);
@@ -61,20 +67,27 @@ public class SimpleList implements FileList,Serializable, Iterable<Object>{
 
     public List<Object> fileToList() {
         List<Object> myList = new ArrayList<>();
-
+        ObjectInputStream ois = null;
+        BufferedInputStream bis = null;
         try {
               if (file.exists()) {
-            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
-            ObjectInputStream ois = new ObjectInputStream(bis);
+            bis = new BufferedInputStream(new FileInputStream(file));
+            ois = new ObjectInputStream(bis);
             while (bis.available() > 0) {
 
                 myList.add(ois.readObject());
             }
 
-            ois.close();
               }
         } catch (Exception ex) {
             ex.printStackTrace();
+        } finally {
+            try {
+                bis.close();
+                ois.close();}
+            catch (Exception ex1) {
+                ex1.printStackTrace();
+            }
         }
         return myList;
     }

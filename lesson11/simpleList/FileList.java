@@ -2,13 +2,15 @@ package lesson11.simpleList;
 
 import java.util.Iterator;
 
-public interface FileList {
+public interface FileList<T> {
 
-    void add(Object obj);
+    void add(T obj);
 
-    void remove(Object obj);
+    void remove(T obj);
+
+    boolean contains(T object);
 
     int getSize();
 
-    Iterator<Object> iterator();
+    Iterator<T> iterator();
 }
