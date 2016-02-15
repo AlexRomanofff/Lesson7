@@ -33,9 +33,7 @@ public class SimpleList implements FileList,Serializable, Iterable<Object>{
 
     @Override
     public boolean contains(Object object) {
-        if (list.contains(object)) {
-            return true;
-        } return false;
+        return list.contains(object);
     }
 
     public void remove(Object obj) {
@@ -83,8 +81,11 @@ public class SimpleList implements FileList,Serializable, Iterable<Object>{
             ex.printStackTrace();
         } finally {
             try {
+                if (ois!=null) {
                 bis.close();
-                ois.close();}
+                ois.close();
+                }
+            }
             catch (Exception ex1) {
                 ex1.printStackTrace();
             }
