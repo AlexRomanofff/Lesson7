@@ -2,18 +2,17 @@ package lesson_12.frame2_Balls.gate;
 
 import javax.swing.*;
 import java.awt.*;
-import java.time.Year;
 
 public class ControlBarrier extends JPanel {
 
     private Car car;
     public Barrier barrier;
     public static final int ENTRANCE = 350;
-    public static final int PARKING_SEAT = 530;
+    public static final int PARKING_SEAT = 700;
     public static final int PARKING_AREA = 400;
 
     public ControlBarrier() throws Exception {
-        car = new Car(10, 150, 20, 40);
+
         barrier = new Barrier();
         JFrame f = new JFrame("Control Barrier");
         f.setLocation(400, 300);
@@ -22,6 +21,8 @@ public class ControlBarrier extends JPanel {
         f.getContentPane().add(this);
         f.pack();
         f.setVisible(true);
+        while (true) {
+        car = new Car(10, 150, 20, 40);
         openBarrier();
 
         new Thread(new Runnable() {
@@ -36,9 +37,9 @@ public class ControlBarrier extends JPanel {
         }).start();
 
 
-        while (true) {
+        while (car.getX()<PARKING_SEAT) {
             repaint();
-            Thread.sleep(100);
+            Thread.sleep(100);}
         }
     }
 
