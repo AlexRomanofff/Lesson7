@@ -12,7 +12,7 @@ public class ControlBarrier extends JPanel {
     public static final int PARKING_AREA = 400;
 
     public ControlBarrier() throws Exception {
-
+        car = new Car(10, 150, 20, 40);
         barrier = new Barrier();
         JFrame f = new JFrame("Control Barrier");
         f.setLocation(400, 300);
@@ -21,25 +21,24 @@ public class ControlBarrier extends JPanel {
         f.getContentPane().add(this);
         f.pack();
         f.setVisible(true);
-        while (true) {
-        car = new Car(10, 150, 20, 40);
+
         openBarrier();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    moveCar();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        moveCar();
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
                 }
-            }
-        }).start();
+            }).start();
 
 
-        while (car.getX()<PARKING_SEAT) {
-            repaint();
-            Thread.sleep(100);}
+
+            while (true) {
+                repaint();
+                Thread.sleep(100);
         }
     }
 
@@ -55,28 +54,43 @@ public class ControlBarrier extends JPanel {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    synchronized (barrier) {
-                        System.out.println("waiting for the car");
-                        barrier.wait();
+                    try {
+                        synchronized (barrier) {
+                            System.out.println("waiting for the car");
+                            barrier.wait();
+                        }
+                        System.out.println("i'm want open gate");
+                        while (true) {
+                            openingAction();
+                            closingAction();
+                        }
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
                     }
-                        openingAction();
-                        while (barrier.isOpen) {
-                            barrier.close();
-
-                    }
-
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
                 }
-            }
-
 
         }).start();
     }
 
+    private void closingAction() {
+        while (barrier.isOpen) {
+            barrier.close();
+
+    }
+        try {
+            System.out.println("close");
+            synchronized (barrier) {
+                barrier.wait();
+            }
+
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
     private void moveCar() throws Exception{
-        while (car.getX()<PARKING_SEAT) {
+        while (true) {
             if (!barrier.isOpen && car.getX()==ENTRANCE) {
                 synchronized (barrier) {
                     System.out.println("i'm here");
@@ -94,6 +108,10 @@ public class ControlBarrier extends JPanel {
                 synchronized (barrier) {
                     barrier.notify();
                 }
+            } else if (car.getX()==PARKING_SEAT) {
+                car.setX(10);
+                car.setY(150);
+
             }
                 car.setX(car.getX()+1);
                Thread.sleep(10);
