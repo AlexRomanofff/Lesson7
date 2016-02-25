@@ -2,7 +2,7 @@ package lesson_12.frame2_Balls;
 
 import java.awt.*;
 
-public class Ball extends Thread {
+public class  Ball extends Thread {
 
     public Ball (int x, int y, int speed, Color color) {
        this.x=x;
@@ -31,7 +31,7 @@ public class Ball extends Thread {
 
     void draw(Graphics g)  {
          g.setColor(color);
-          g.fillOval(x,y,15,15);
+         g.fillRect(x,y,15,15);
     }
 
     void moveBall() {

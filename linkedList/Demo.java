@@ -29,22 +29,25 @@ public class Demo {
         list.addLast(s4);
         list.addLast(s5);
 
+        list.addAfter(s1, s4);
+
         list.addFirst(s3);
+        list.addAfter(s5,s5);
 
 
 
 
 
-             int i = list.size;
-        for (Iterator<Object> it = list.iterator(); i >=0; i-- ) {
-            if (it.hasNext()==false) {
-            it.remove();
-            break;}
-            it.next();
-        }
+//             int i = list.getSize();
+//        for (Iterator<Object> it = list.iterator(); i >=0; i-- ) {
+//            if (it.hasNext()==false) {
+//            it.remove();
+//            break;}
+//            it.next();
+//        }
         for (Object o : list) {
-            String s = (String)o;
-            System.out.println(s);
+//            String s = (String)o;
+            System.out.println(o);
         }
     }
 //    Collections.sort

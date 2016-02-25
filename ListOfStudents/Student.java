@@ -31,12 +31,12 @@ public class Student {
         return (getName()+" "+getSecondName());
     }
 
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (obj instanceof Student) {
-//            Student student = (Student) obj;
-//            return (name != null && secondName != null && name.equals(student.getName()) && secondName.equals(student.getSecondName()));
-//        }
-//        return false;
-//    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Student) {
+            Student student = (Student) obj;
+            return (name != null && secondName != null && name.equals(student.getName()) && secondName.equals(student.getSecondName()));
+        }
+        return false;
+    }
 }

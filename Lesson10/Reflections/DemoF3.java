@@ -15,7 +15,7 @@ public class DemoF3 {
         Map<String, Object> map = new HashMap<>();
         map.put("brand", "Panasonic");
 //        map.put("height", 200);
-//        map.put("weight", 100);
+//        map.put("width", 100);
         TV tv = f3.initClass(TV.class, map);
 
         System.out.println(tv.getWeight());

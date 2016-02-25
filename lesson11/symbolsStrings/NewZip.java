@@ -75,13 +75,13 @@ public class NewZip {
         ZipEntry zEntry;
 
         File file = new File(filePath);
-        String namePath = file.getAbsolutePath().substring(0,file.getAbsolutePath().indexOf("."));
-        System.out.println(namePath);
+        String dirPath = file.getAbsolutePath().substring(0,file.getAbsolutePath().indexOf("."));
+        System.out.println(dirPath);
 
         try
 
         {
-            File directory = new File (namePath);
+            File directory = new File (dirPath);
             directory.mkdir();
             directory.createNewFile();
 
@@ -92,7 +92,6 @@ public class NewZip {
                     byte[] tmp = new byte[8192];
 
                     String opFilePath =  directory.getAbsolutePath()+File.separator+ zEntry.getName();
-                    System.out.println("Extracting file to " + opFilePath);
                     FileOutputStream fos = new FileOutputStream(opFilePath);
                     int size;
                     while ((size = zipIs.read(tmp)) != -1) {

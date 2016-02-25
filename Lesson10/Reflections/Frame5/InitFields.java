@@ -10,9 +10,17 @@ public class InitFields<T> {
 
             for (Map.Entry< String, Object> e : map.entrySet()) {
                 Field f = obj.getClass().getDeclaredField(e.getKey());
-                f.setAccessible(true);
-                f.set(obj, e.getValue());
-                f.setAccessible(false);
+                Field []fields = obj.getClass().getDeclaredFields();
+                for (Field fi: fields) {
+                    System.out.println(fi.getName());
+                }
+
+                       f.setAccessible(true);
+                       f.set(obj, e.getValue());
+                       f.setAccessible(false);
+
+
+
             }
 
 

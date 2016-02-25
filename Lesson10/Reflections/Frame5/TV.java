@@ -1,13 +1,19 @@
 package Lesson10.Reflections.Frame5;
 
+import java.lang.reflect.Field;
+
 public class TV {
-    public int height;
-    public int weight;
+
+    private int height;
+    private int width;
     private String brand;
+     public TV () {
+
+     }
 
 
-    public int getWeight() {
-        return weight;
+    public int getWidth() {
+        return width;
     }
 
     public int getHeight() {
@@ -22,8 +28,8 @@ public class TV {
         this.height = height;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setWidth(int width) {
+        this.width = width;
     }
 
     public void setBrand(String brand) {

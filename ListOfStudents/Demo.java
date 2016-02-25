@@ -38,13 +38,23 @@ public class Demo {
         student5.setSecondName("Ho");
         classRoom.enterClass(student5);
 
+        Student student6 = new Student();
+        student6.setName("Alfred");
+        student6.setSecondName("Hichcock");
+        classRoom.enterClass(student6);
+
         classRoom.printList();
         classRoom.leaveClass(student);
-        classRoom.leaveClass(student2);
+        classRoom.leaveClass(student4);
         System.out.println(classRoom.getStudentCount());
         classRoom.printList();
         classRoom.isPresent(student);
-        classRoom.isPresent(student1);
+        classRoom.isPresent(student4);
+        classRoom.isPresent(student6);
+
+        classRoom.printList();
+
+
 
     }
 

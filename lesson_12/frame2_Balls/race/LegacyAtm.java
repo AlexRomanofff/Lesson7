@@ -2,7 +2,7 @@ package lesson_12.frame2_Balls.race;
 
 public class LegacyAtm implements Atm {
 
-    private int balance = 2000;
+    private int balance = 2000 ;
 
     @Override
     public void checkBalance(long accountID) {

@@ -21,7 +21,7 @@ public class TV {
         this.manufacturer = manufacturer;
     }
 
-    public TV (int weight,  String manufacturer, int height, double price) {
+    public TV (int weight, int height,  String manufacturer, double price) {
         this.weight = weight;
         this.height = height;
         this.manufacturer = manufacturer;

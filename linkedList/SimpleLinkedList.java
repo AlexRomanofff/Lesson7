@@ -2,12 +2,9 @@ package linkedList;
 
 import java.util.Iterator;
 
-/**
- * Created by Алекс on 24.11.2015.
- */
 public class SimpleLinkedList implements Iterable<Object>{
-    Node root;
-    int size;
+    private Node root;
+    private int size;
 
     public SimpleLinkedList () {
      size = 0;
@@ -108,7 +105,7 @@ public class SimpleLinkedList implements Iterable<Object>{
             for (int i = 0; i < this.size; i++) {
                 if (prev.equals(current.obj)) {
                     if (current.ref == null) {
-                        System.out.println("Our element at last position");
+                        addLast(obj1);
                         break;
                     } else {
                         Node n = new Node();

@@ -12,6 +12,7 @@ public class ByteLearning {
         while ((i=stream.read())!=-1) {
             System.out.print(i+","+" ");
         }
+
         stream.close();
     }
 }

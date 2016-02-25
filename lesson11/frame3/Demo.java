@@ -12,6 +12,7 @@ public class Demo {
         CopyFiles cf = new CopyFiles();
         File file = new File("D:"+File.separator+"new_Directory"+File.separator+"newFile.txt");
         cf.copyFile(file);
+        System.out.println(file.getName());
     }
 
 }

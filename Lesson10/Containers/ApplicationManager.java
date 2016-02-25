@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
-public class ApplicationManager <T> {
+public class ApplicationManager  {
 
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException{
         ApplicationManager am = new ApplicationManager();
@@ -26,7 +26,7 @@ public class ApplicationManager <T> {
             }
         }
     }
-    public T getService (Class<T> aClass) throws IllegalAccessException, InstantiationException {
+    public<T> T getService (Class<T> aClass) throws IllegalAccessException, InstantiationException {
         if (aClass.isAnnotationPresent(RunService.class)) {
             System.out.println("Create new instance class: " + aClass.getSimpleName());
             return aClass.newInstance();
