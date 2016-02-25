@@ -55,4 +55,15 @@ public class Barrier{
             }
         } isOpen = true;
     }
+    public void close() {
+        while (height<100) {
+
+            height++;
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }isOpen = false;
+    }
 }
