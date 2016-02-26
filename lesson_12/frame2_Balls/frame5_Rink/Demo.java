@@ -12,9 +12,9 @@ public class Demo {
 
         final SkatingRink skatingRink = new SchoolSkatingRink(5);
         final Random random = new Random();
-        final List <Skater> skaters = new ArrayList<>();
+        final List <Skater> waitSkaters = new ArrayList<>();
 
-        for (int i=1; i<10; i++) {
+        for (int i=1; i<100; i++) {
 
             final Skater skater = new Skater("Skater "+i);
 
@@ -27,7 +27,7 @@ public class Demo {
                         try {
                             synchronized (skater) {
                                 System.out.println("Sorry "+skater.getName()+", skates are unavailability, wait please");
-                                skaters.add(skater);
+                                waitSkaters.add(skater);
                                 skater.wait();
                             }
                         } catch (InterruptedException ex) {
@@ -37,9 +37,9 @@ public class Demo {
                     Skates skates = skatingRink.getSkates(skater);
                     sleep(random.nextInt(2000));
                     skatingRink.returnSkates(skates, skater);
-                    if (skaters.size()>0) {
-                        Skater waitSkater = skaters.get(0);
-                        skaters.remove(0);
+                    if (waitSkaters.size()>0) {
+                        Skater waitSkater = waitSkaters.get(0);
+                        waitSkaters.remove(0);
                         synchronized (waitSkater) {
                             waitSkater.notify();
                         }
