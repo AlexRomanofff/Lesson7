@@ -6,5 +6,4 @@ public interface SkatingRink {
 
     public void returnSkates (Skates skates, Skater skater);
 
-    public boolean isAvailability();
 }

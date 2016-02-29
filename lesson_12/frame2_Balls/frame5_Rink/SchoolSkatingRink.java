@@ -1,34 +1,30 @@
 package lesson_12.frame2_Balls.frame5_Rink;
 
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
+
 public class SchoolSkatingRink implements SkatingRink {
 
-    private int quantitySkates;
-    private boolean isAvailability;
+    private Queue<Skates> skatesShelf = new LinkedBlockingDeque<>();
 
-    public boolean isAvailability() {
-        return isAvailability;
-    }
+    public SchoolSkatingRink() {
 
-    public SchoolSkatingRink(int quantitySkates) {
-        this.quantitySkates=quantitySkates;
-        isAvailability = true;
+        for (int i = 0; i<5; i++) {
+            Skates skate = new Skates();
+            skatesShelf.add(skate);
+        }
     }
 
     @Override
     public Skates getSkates(Skater skater) {
-        System.out.println(skater.getName()+ " got skates");
-        quantitySkates--;
-        if (quantitySkates==0) {
-            isAvailability=false;
-        }
-        return new Skates();
+        return skatesShelf.poll();
     }
 
     @Override
     public void returnSkates(Skates skates, Skater skater) {
-        System.out.println(skater.getName()+" return skates");
-        quantitySkates++;
-        isAvailability=true;
-
+        if (!(skates == null)) {
+            System.out.println(skater.getName() + " return skates");
+            skatesShelf.add(skates);
+        }
     }
 }
